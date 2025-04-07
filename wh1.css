@@ -3,6 +3,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     direction: rtl;
+    padding-top: 60px; /* רווח למעלה שיתקן את התוכן שלא יוסתר */
 }
 
 /* תפריט עליון */
@@ -13,6 +14,11 @@ body {
     align-items: center;
     justify-content: space-around;
     padding: 10px;
+    position: fixed; /* התפריט יישאר קבוע למעלה */
+    top: 0; /* מיקום בראש הדף */
+    width: 100%; /* על כל רוחב הדף */
+    z-index: 1000; /* לוודא שהתפריט יישאר מעל כל שאר התוכן */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* צל לתפריט */
 }
 
 .menu img {
@@ -37,7 +43,8 @@ body {
 .my-photos h2,
 .youtube-playlist h2,
 .facebook-like  h2,
-.qr-code h2{
+.qr-code h2,
+.contact-form h2 {
     background-color: gainsboro;
     color: #373942;
     text-decoration: underline;
@@ -46,6 +53,7 @@ body {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 8px;
+    padding-top: 60px; /* הוספת רווח עליון לכותרות */
 }
 
 /* טקסט כללי */
@@ -62,7 +70,8 @@ body {
 .my-photos,
 .youtube-playlist,
 .facebook-like,
-.qr-code {
+.qr-code,
+.contact-form {
     background-color: white;
     margin: 20px;
     padding: 20px;
@@ -170,4 +179,17 @@ body {
 
 .contact-form button:hover {
     background-color: #575757;
+}
+
+/* עיצוב אחיד ל־QR */
+.qr-code {
+    text-align: center;
+    margin: 20px auto;
+    width: 100%; /* ישמור על רוחב אחיד */
+}
+
+.qr-code img {
+    width: 150px; /* ניתן לשנות את הגודל */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
