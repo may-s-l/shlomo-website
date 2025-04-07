@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שלמה לוי - קצת עלי</title>
+    <link rel="stylesheet" href="wh1.css">
+</head>
+<body>
+
+    <div class="menu">
+        <img src="shlomo levi.png" width="90" height="45" alt="לוגו">
+        <a href="#">קצת עלי</a>
+        <a href="#">תמונות שלי</a>
+        <a href="#">שיר אהוב</a>
+        <a href="#">אהבתי</a>
+        <a href="#">QR code</a>
+        <a href="#">שאלו אותי</a>
+        <a href="#">צור קשר</a>
+    </div>
+
+    <div class="about-me">
+        <h2>קצת עלי</h2>
+        <p>שלמה לוי נולד בשדרות בשנת 1960 לזוג עולים ממרוקו, סעידה ומכלוף לוי.</p>
+        <p>הוא הבן השלישי במשפחה בת תשעה ילדים – חמש בנות וארבעה בנים.</p>
+        <p>בגיל שנתיים חלה במחלת פוליו ומאז סובל משיתוק ברגל ימין.</p>
+        <p>למד בבית הספר היסודי "עץ חיים" ולאחר מכן בתיכון מקיף דתי בשדרות.</p>
+        <p>בגיל 15 פרש מהלימודים והחל לעבוד – תחילה במכון פרי, אחר כך במכבסת שער הנגב ובמפעלים שונים.</p>
+        <p>בגיל 27 נישא למרים אלון, ילידת שדרות. יחד הביאו לעולם ארבעה ילדים: ישראל, ירין, מאי וחי.</p>
+        <p>יש להם ארבעה נכדים: אליה, אריאל, ניתאי ועידו.</p>
+        <p>התחביב העיקרי של שלמה הוא מכוניות.</p>
+    </div>
+
+    <div class="my-photos">
+        <h2>תמונות שלי</h2>
+        <div class="image-slider">
+            <button id="prev">➡</button>
+            <img id="slider-img" src="images/image0.jpg" alt="תמונה 1">
+            <button id="next">⬅</button>
+        </div>
+        <p id="counter">תמונה 1 מתוך 13</p>
+    </div>
+    
+    <script>
+        const img = document.getElementById("slider-img");
+        const counter = document.getElementById("counter");
+        const total = 12;
+        let current = 0;
+    
+        document.getElementById("next").onclick = () => {
+            current = current === total ? 0 : current + 1;
+            updateImage();
+        };
+    
+        document.getElementById("prev").onclick = () => {
+            current = current === 0 ? total : current - 1;
+            updateImage();
+        };
+    
+        function updateImage() {
+            img.src = `images/image${current}.jpg`;
+            img.alt = `תמונה ${current}`;
+            counter.textContent = `תמונה ${current + 1} מתוך ${total + 1}`;
+        }
+    
+        updateImage();
+    </script>
+    
+    
+    <div class="youtube-playlist">
+        <h2>שיר אהוב</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/qIYNpaGLS6A?si=b3BgS9qfMR9swOKu&amp;start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+    </div>
+
+    
+    <div class="facebook-like">
+        <h2>תנו לי LIKE</h2>
+        <div class="fb-like" data-href="http://127.0.0.1:5500/wh1.html" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+    </div>
+
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0" nonce="YbFbzql0"></script>
+
+    
+    <div class="qr-code">
+        <h2>קישור QR</h2>
+        <img src="qrcode_.png" alt="QR">
+    </div>
+
+
+    </body>
+</html>
