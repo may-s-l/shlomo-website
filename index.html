@@ -10,16 +10,16 @@
 
     <div class="menu">
         <img src="shlomo levi.png" width="90" height="45" alt="לוגו">
-        <a href="#">קצת עלי</a>
-        <a href="#">תמונות שלי</a>
-        <a href="#">שיר אהוב</a>
-        <a href="#">אהבתי</a>
-        <a href="#">QR code</a>
-        <a href="#">שאלו אותי</a>
-        <a href="#">צור קשר</a>
+        <a href="#about-me">קצת עלי</a>
+        <a href="#my-photos">תמונות שלי</a>
+        <a href="#favorite-song">שיר אהוב</a>
+        <a href="#my-likes">אהבתי</a>
+        <a href="#qr-code">QR code</a>
+        <a href="#contact">שאלו אותי</a>
+        <a href="#contact-form">צור קשר</a>
     </div>
 
-    <div class="about-me">
+    <div class="about-me" id="about-me">
         <h2>קצת עלי</h2>
         <p>שלמה לוי נולד בשדרות בשנת 1960 לזוג עולים ממרוקו, סעידה ומכלוף לוי.</p>
         <p>הוא הבן השלישי במשפחה בת תשעה ילדים – חמש בנות וארבעה בנים.</p>
@@ -31,7 +31,7 @@
         <p>התחביב העיקרי של שלמה הוא מכוניות.</p>
     </div>
 
-    <div class="my-photos">
+    <div class="my-photos" id="my-photos">
         <h2>תמונות שלי</h2>
         <div class="image-slider">
             <button id="prev">➡</button>
@@ -67,27 +67,49 @@
     </script>
     
     
-    <div class="youtube-playlist">
+    <div class="youtube-playlist" id="favorite-song">
         <h2>שיר אהוב</h2>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/qIYNpaGLS6A?si=b3BgS9qfMR9swOKu&amp;start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
     </div>
 
-    
-    <div class="facebook-like">
+    <div class="facebook-like" id="my-likes">
         <h2>תנו לי LIKE</h2>
         <div class="fb-like" data-href="https://may-s-l.github.io/shlomo-website/" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
     </div>
 
-
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0" nonce="YbFbzql0"></script>
 
-    
-    <div class="qr-code">
+    <div class="qr-code" id="qr-code">
         <h2>קישור QR</h2>
         <img src="qrcode_.png" alt="QR">
     </div>
 
+    <div class="contact-form" id="contact-form">
+        <h2>צור קשר</h2>
+        <form action="your-server-script.php" method="POST">
+            <label for="name">שם:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">אימייל:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">הודעה:</label>
+            <textarea id="message" name="message" required></textarea>
+    
+            <label for="smiley">בחר סמיילי:</label>
+            <select id="smiley" name="smiley">
+                <option value="smile">😊</option>
+                <option value="wink">😉</option>
+                <option value="sad">😢</option>
+                <option value="surprised">😲</option>
+                <option value="love">😍</option>
+            </select>
+            
+            <button type="submit">שלח הודעה</button>
+        </form>
+    </div>
+    
 
-    </body>
+</body>
 </html>
